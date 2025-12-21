@@ -1,70 +1,19 @@
 <div x-data="{
     tableRowData: [
+        @foreach($users as $user)
         {
-            id: 'DE124321',
-            checked: false,
-            customerName: 'John Doe',
-            customerEmail: 'johndoe@gmail.com',
-            initials: 'JD',
-            avatarBg: 'bg-blue-100',
-            avatarColor: 'text-blue-500',
-            product: 'Software License',
-            value: '$18,50.34',
-            closeDate: '2024-06-15',
-            status: 'Complete',
+            id: {{ $user->id }},
+            initials: '{{ strtoupper(substr($user->name, 0, 1)) }}',
+            customerName: '{{ $user->name }}',
+            customerEmail: '{{ $user->email }}',
+            avatarBg: 'bg-blue-100 dark:bg-blue-500/15',
+            avatarColor: 'text-blue-600 dark:text-blue-400',
+            product: 'Product {{ $user->id }}',
+            value: '$' + (Math.floor(Math.random() * 900) + 100),
+            closeDate: '{{ now()->subDays(rand(1, 30))->format('M d, Y') }}',
+            status: ['Complete', 'Pending', 'Cancel'][Math.floor(Math.random() * 3)],
         },
-        {
-            id: 'DE124322',
-            checked: false,
-            customerName: 'Kierra Franci',
-            customerEmail: 'kierra@gmail.com',
-            initials: 'KF',
-            avatarBg: 'bg-[#fdf2fa]',
-            avatarColor: 'text-[#dd2590]',
-            product: 'Software License',
-            value: '$18,50.34',
-            closeDate: '2024-06-15',
-            status: 'Complete',
-        },
-        {
-            id: 'DE124323',
-            checked: false,
-            customerName: 'Emerson Workman',
-            customerEmail: 'emerson@gmail.com',
-            initials: 'EW',
-            avatarBg: 'bg-[#f0f9ff]',
-            avatarColor: 'text-[#0086c9]',
-            product: 'Software License',
-            value: '$18,50.34',
-            closeDate: '2024-06-15',
-            status: 'Pending',
-        },
-        {
-            id: 'DE124324',
-            checked: false,
-            customerName: 'Chance Philips',
-            customerEmail: 'chance@gmail.com',
-            initials: 'CP',
-            avatarBg: 'bg-[#fff6ed]',
-            avatarColor: 'text-[#ec4a0a]',
-            product: 'Software License',
-            value: '$18,50.34',
-            closeDate: '2024-06-15',
-            status: 'Complete',
-        },
-        {
-            id: 'DE124325',
-            checked: false,
-            customerName: 'Terry Geidt',
-            customerEmail: 'terry@gmail.com',
-            initials: 'TG',
-            avatarBg: 'bg-green-50',
-            avatarColor: 'text-green-600',
-            product: 'Software License',
-            value: '$18,50.34',
-            closeDate: '2024-06-15',
-            status: 'Complete',
-        },
+        @endforeach
     ],
     selectedRows: [],
     selectAll: false,
@@ -186,13 +135,13 @@
                                 <p class="text-gray-700 text-theme-sm dark:text-gray-400" x-text="row.closeDate"></p>
                             </td>
                             <td class="px-4 sm:px-6 py-3.5">
-                                <span class="text-theme-xs inline-block rounded-full px-2 py-0.5 font-medium" 
-                                    :class="getStatusClass(row.status)" 
+                                <span class="text-theme-xs inline-block rounded-full px-2 py-0.5 font-medium"
+                                    :class="getStatusClass(row.status)"
                                     x-text="row.status"></span>
                             </td>
                             <td class="px-4 sm:px-6 py-3.5">
                                 <button @click="deleteRow(row.id)">
-                                    <svg class="text-gray-700 cursor-pointer size-5 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-500" 
+                                    <svg class="text-gray-700 cursor-pointer size-5 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-500"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
                                     </svg>

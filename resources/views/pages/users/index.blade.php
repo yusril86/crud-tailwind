@@ -5,7 +5,7 @@
     <div class="space-y-6">
 
         <x-common.component-card title="Table Users">
-            <x-tables.basic-tables.basic-tables-two />
+            <x-tables.basic-tables.basic-tables-two :users="$users" />
         </x-common.component-card>
     </div>
 @endsection
