@@ -85,15 +85,10 @@
                                         <path d="M11.6668 3.5L5.25016 9.91667L2.3335 7" stroke="white" stroke-width="1.94437" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
-                                <span class="font-medium text-gray-500 text-theme-xs dark:text-gray-400">Deal ID</span>
+                                <span class="font-medium text-gray-500 text-theme-xs dark:text-gray-400"> ID</span>
                             </div>
                         </th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Customer</th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Product/Service</th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Deal Value</th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Close Date</th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Status</th>
-                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">Action</th>
+                        <th class="px-6 py-3 font-medium text-gray-500 sm:px-6 text-theme-xs dark:text-gray-400 text-start">User</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,20 +120,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-4 sm:px-6 py-3.5">
-                                <p class="text-gray-700 text-theme-sm dark:text-gray-400" x-text="row.product"></p>
-                            </td>
-                            <td class="px-4 sm:px-6 py-3.5">
-                                <p class="text-gray-700 text-theme-sm dark:text-gray-400" x-text="row.value"></p>
-                            </td>
-                            <td class="px-4 sm:px-6 py-3.5">
-                                <p class="text-gray-700 text-theme-sm dark:text-gray-400" x-text="row.closeDate"></p>
-                            </td>
-                            <td class="px-4 sm:px-6 py-3.5">
-                                <span class="text-theme-xs inline-block rounded-full px-2 py-0.5 font-medium"
-                                    :class="getStatusClass(row.status)"
-                                    x-text="row.status"></span>
-                            </td>
+
                             <td class="px-4 sm:px-6 py-3.5">
                                 <button @click="deleteRow(row.id)">
                                     <svg class="text-gray-700 cursor-pointer size-5 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-500"
