@@ -39,6 +39,11 @@ class MenuHelper
                 ],
             ],
             [
+                'name' => 'Table Users',
+                'icon' => 'tables',
+                'path' => '/users',
+            ],
+            [
                 'name' => 'Pages',
                 'icon' => 'pages',
                 'subItems' => [
