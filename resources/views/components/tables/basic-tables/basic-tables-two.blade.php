@@ -6,12 +6,12 @@
             initials: '{{ strtoupper(substr($user->name, 0, 1)) }}',
             customerName: '{{ $user->name }}',
             customerEmail: '{{ $user->email }}',
-            avatarBg: 'bg-blue-100 dark:bg-blue-500/15',
+            {{-- avatarBg: 'bg-blue-100 dark:bg-blue-500/15',
             avatarColor: 'text-blue-600 dark:text-blue-400',
             product: 'Product {{ $user->id }}',
             value: '$' + (Math.floor(Math.random() * 900) + 100),
             closeDate: '{{ now()->subDays(rand(1, 30))->format('M d, Y') }}',
-            status: ['Complete', 'Pending', 'Cancel'][Math.floor(Math.random() * 3)],
+            status: ['Complete', 'Pending', 'Cancel'][Math.floor(Math.random() * 3)], --}}
         },
         @endforeach
     ],
