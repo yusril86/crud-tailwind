@@ -6,7 +6,7 @@
 
         <x-common.component-card title="Table Users">
             <div class="flex items-center gap-3">
-                <a href="" class="ml-auto items-center gap-2 rounded-lg border border-gray-300 bg-blue-300 px-7 py-3 text-theme-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
+                <a href="{{ route('users.create') }}" class="ml-auto items-center gap-2 rounded-lg border border-gray-300 bg-blue-300 px-7 py-3 text-theme-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
                     Tambah User
                 </a>
             </div>
