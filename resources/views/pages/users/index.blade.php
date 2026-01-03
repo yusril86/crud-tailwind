@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+ @if (session('success'))
+        <div class="mb-4 rounded-lg bg-green-100 px-6 py-5 text-base text-green-700" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <x-common.page-breadcrumb pageTitle="From Elements" />
     <div class="space-y-6">
 
