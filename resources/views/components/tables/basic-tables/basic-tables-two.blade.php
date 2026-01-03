@@ -42,6 +42,15 @@
     },
     deleteRow(id) {
         if (confirm('Are you sure you want to delete this order?')) {
+
+            route = '/users/' + id ;
+            fetch(route, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                }
+            });
             this.tableRowData = this.tableRowData.filter(row => row.id !== id);
             this.selectedRows = this.selectedRows.filter(rowId => rowId !== id);
         }
