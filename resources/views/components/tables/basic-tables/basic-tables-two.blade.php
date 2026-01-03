@@ -51,8 +51,7 @@
                     'Content-Type': 'application/json'
                 }
             });
-            this.tableRowData = this.tableRowData.filter(row => row.id !== id);
-            this.selectedRows = this.selectedRows.filter(rowId => rowId !== id);
+            window.location.href = '/users';
         }
     },
     editRow(id) {
