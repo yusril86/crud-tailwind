@@ -14,9 +14,10 @@
     @endif
     <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div class="space-y-6">
-            <form action="{{ route('users.store') }}" method="POST">
+            <form action="{{ route('users.update', $user->id) }}" method="POST">
                 @csrf
-                <x-form.form-elements.user-form />
+                @method('PUT')
+                <x-form.form-elements.user-form :user="$user" />
             </form>
         </div>
     </div>
