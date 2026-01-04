@@ -14,43 +14,13 @@ class MenuHelper
                     ['name' => 'Ecommerce', 'path' => '/'],
                 ],
             ],
-            [
-                'icon' => 'calendar',
-                'name' => 'Calendar',
-                'path' => '/calendar',
-            ],
-            [
-                'icon' => 'user-profile',
-                'name' => 'User Profile',
-                'path' => '/profile',
-            ],
-            [
-                'name' => 'Forms',
-                'icon' => 'forms',
-                'subItems' => [
-                    ['name' => 'Form Elements', 'path' => '/form-elements', 'pro' => false],
-                ],
-            ],
-            [
-                'name' => 'Tables',
-                'icon' => 'tables',
-                'subItems' => [
-                    ['name' => 'Basic Tables', 'path' => '/basic-tables', 'pro' => false]
-                ],
-            ],
+
             [
                 'name' => 'Table Users',
                 'icon' => 'tables',
                 'path' => '/users',
             ],
-            [
-                'name' => 'Pages',
-                'icon' => 'pages',
-                'subItems' => [
-                    ['name' => 'Blank Page', 'path' => '/blank', 'pro' => false],
-                    ['name' => '404 Error', 'path' => '/error-404', 'pro' => false]
-                ],
-            ],
+
         ];
     }
 
@@ -95,10 +65,10 @@ class MenuHelper
                 'title' => 'Menu',
                 'items' => self::getMainNavItems()
             ],
-            [
-                'title' => 'Others',
-                'items' => self::getOthersItems()
-            ]
+            // [
+            //     'title' => 'Others',
+            //     'items' => self::getOthersItems()
+            // ]
         ];
     }
 
